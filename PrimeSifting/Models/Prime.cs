@@ -1,10 +1,11 @@
 using System.Collections.Generic;
+using System;
 
 namespace Prime.Models
 {
   public class PrimeNumbers
   {
-    public static List<int> numberList = new List<int> {};
+    public static List<int> numberList = new List<int> {};  
 
     public static void MakeList(int inputNum)
     {
@@ -14,14 +15,18 @@ namespace Prime.Models
       }
     }
 
-    // for (int prime=2; prime<=inputNum; prime++)
-    //   {
-    //     for (int i=prime+1; i<numberList.Count; i++)
-    //     {
-    //       if (numberList[i] % prime == 0)
-    //     }
-    //   }
-    // properties, methods, etc. will go here.
-
+    public static void MakePrime(List<int> numberList)
+    {      
+      for (int prime = 2; prime<numberList.Count; prime++)
+      {         
+        for (int i=1; i<numberList.Count; i++)  
+        {          
+          if (numberList[i] % prime == 0 && numberList[i] != prime)
+          {
+            numberList.Remove(numberList[i]);
+          }
+        }
+      }
+    }
   }
 }

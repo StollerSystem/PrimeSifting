@@ -21,5 +21,16 @@ namespace PrimeSifting.Tests
       //Assert
       CollectionAssert.AreEqual(testList1, PrimeNumbers.numberList);
     }
+
+    [TestMethod]
+    public void MakePrime_AddPrimesToNewList_List()
+    {
+       //Arrange
+      List<int> testPrimes = new List<int> {2,3,5,7};
+      //Act  
+      PrimeNumbers.MakePrime(PrimeNumbers.numberList);
+      //Assert
+      CollectionAssert.AreEqual(testPrimes, PrimeNumbers.numberList);
+    }
   }
 }
